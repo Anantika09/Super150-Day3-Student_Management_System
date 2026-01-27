@@ -29,7 +29,7 @@ public class StudentController {
     // update
     @PutMapping("/update/{id}")
     public StudentModel updateStudent(@PathVariable String id,@RequestBody StudentModel student){
-        return service.updateStudent(id,student);
+        return service.updateStudent(id,student);git
     }
 
     @DeleteMapping("/delete/{id}")
