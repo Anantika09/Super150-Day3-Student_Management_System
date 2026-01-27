@@ -14,7 +14,7 @@ public class StudentService {
         this.repository = repository;
     }
 
-    //create
+    //create student
     public StudentModel addStudent(StudentModel student){
         return repository.save(student);
     }
@@ -24,7 +24,7 @@ public class StudentService {
         return repository.findAll();
     }
 
-    //update
+    //update student
     public StudentModel updateStudent(String id,StudentModel student){
         StudentModel existingStudent=repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("No Student found"));
@@ -34,4 +34,8 @@ public class StudentService {
         return repository.save(existingStudent);
     }
 
+    //delete student
+    public void deleteStudent(String id){
+        repository.deleteById(id);
+    }
 }
