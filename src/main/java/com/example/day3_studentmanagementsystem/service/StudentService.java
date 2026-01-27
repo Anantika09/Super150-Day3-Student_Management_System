@@ -4,6 +4,8 @@ import com.example.day3_studentmanagementsystem.model.StudentModel;
 import com.example.day3_studentmanagementsystem.repository.StudentRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class StudentService {
     private final StudentRepository repository;
@@ -16,4 +18,11 @@ public class StudentService {
     public StudentModel addStudent(StudentModel student){
         return repository.save(student);
     }
+
+    //display student
+    public List<StudentModel> getStudents(){
+        return repository.findAll();
+    }
+
+
 }
