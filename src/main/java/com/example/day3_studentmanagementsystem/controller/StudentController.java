@@ -25,4 +25,10 @@ public class StudentController {
     public List<StudentModel> getStudents(){
         return service.getStudents();
     }
+
+    // update
+    @PutMapping("/update/{id}")
+    public StudentModel updateStudent(@PathVariable String id,@RequestBody StudentModel student){
+        return service.updateStudent(id,student);
+    }
 }
